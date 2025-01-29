@@ -61,7 +61,7 @@ const EmployeeForm: FC = () => {
         name="name"
         rules={[{required: true, message: 'Введите имя'}]}
       >
-        <Input/>
+        <Input placeholder={"Введите имя"}/>
       </Form.Item>
 
       <Form.Item
@@ -72,7 +72,7 @@ const EmployeeForm: FC = () => {
           {pattern: /\+7 \(\d{3}\) \d{3}-\d{2}\d{2}/, message: 'Неверный формат'}
         ]}
       >
-        <MaskedInput mask={PHONE_MASK}/>
+        <MaskedInput mask={PHONE_MASK} placeholder={"Введите номер телефона"}/>
       </Form.Item>
 
       <Form.Item
@@ -80,7 +80,7 @@ const EmployeeForm: FC = () => {
         name="role"
         rules={[{required: true, message: 'Выберите должность'}]}
       >
-        <Select>
+        <Select placeholder={'Выберите должность'}>
           <Select.Option value="cook">cook</Select.Option>
           <Select.Option value="waiter">waiter</Select.Option>
           <Select.Option value="driver">driver</Select.Option>
@@ -95,7 +95,7 @@ const EmployeeForm: FC = () => {
           { pattern: /^(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[0-2])\.\d{4}$/, message: 'Неверный формат' }
         ]}
       >
-        <MaskedInput mask={DATE_MASK} placeholder={DATE_FORMAT}  />
+        <MaskedInput mask={DATE_MASK} placeholder={DATE_FORMAT} />
       </Form.Item>
 
       <Form.Item name="isArchive" valuePropName="checked" initialValue={false}>
